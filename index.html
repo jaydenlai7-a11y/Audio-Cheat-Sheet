@@ -56,6 +56,8 @@ ol li::before{content:counter(s);position:absolute;left:0;top:2px;width:17px;hei
 .zb .z{padding:6px 8px;font-size:12.5px;line-height:1.25;border-bottom:4px solid;background:var(--tint)}
 .zb .z b{display:block;font:700 18px/1 var(--head)}
 .zb .lo{border-color:#5a9a2e}.zb .ok{border-color:#1e9e57;background:hsla(140,60%,45%,.28)}.zb .hi{border-color:#e5a10f}.zb .xx{border-color:#d3342f}
+.cmp td:nth-child(2){font-weight:400;white-space:normal}
+.cmp td:nth-child(3){color:var(--muted)}
 .chartnote{margin:0 0 6px;font-size:12px;color:var(--muted)}
 .rule{border-left:4px solid var(--warn);background:var(--tint);padding:3px 8px;margin:0 0 4px;font-size:13px}
 .rule.r{border-color:var(--clip)}.rule.g{border-color:var(--go)}
@@ -92,6 +94,7 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
   .chartnote{font-size:8pt}
   .zb .z{font-size:8.5pt;padding:4px 6px}.zb .z b{font-size:13pt}
   .spl{padding-top:10px}
+  .cmp{padding-top:8px}.cmp .tips{font-size:7.8pt}
   .sp{min-width:0}
   .sp .nm{flex-basis:1in;font-size:9pt;padding:9px 6px}
   .sp .tr{min-height:.36in}.sp .tr span{font-size:6.6pt;padding:3px 0}
@@ -199,10 +202,10 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
   </div></div>
 </div>
 <div class="pad spl">
-  <h2>Volume target: 75–85 dB</h2>
+  <h2>Volume target: 80–85 dB</h2>
   <div class="zb">
-    <div class="z lo" style="flex:10"><b>Below 75</b>Too quiet</div>
-    <div class="z ok" style="flex:5"><b>75–85</b>Target</div>
+    <div class="z lo" style="flex:10"><b>Below 80</b>Too quiet</div>
+    <div class="z ok" style="flex:5"><b>80–85</b>Target</div>
     <div class="z hi" style="flex:5"><b>85–90</b>Turn down</div>
     <div class="z xx" style="flex:10"><b>Over 90</b>Too loud: turn down now</div>
   </div>
@@ -213,6 +216,27 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
     <li><b>Use the main fader</b> to bring the overall level into range. Don't change channel gain.</li>
     <li><b>Over 85?</b> Ask players to turn down their instruments or amps first (keyboards and electric guitar at about 80%), then lower the main fader.</li>
     <li><b>Walk-in music and videos</b> should land in the same range as the band.</li>
+  </ul>
+</div>
+<div class="pad cmp">
+  <h2>Compressor settings</h2>
+  <p class="chartnote">A compressor turns down the loud parts so the level stays even. Turn on Dynamics 1 in Selected Channel view, then use the settings below.</p>
+  <div class="scroll"><table>
+  <thead><tr><th>Setting</th><th>What it does</th><th>Tip</th></tr></thead>
+  <tbody>
+  <tr><td>Threshold</td><td>The level where compression starts. Sound below it is left alone. Lowering the threshold means more of the signal gets turned down.</td><td>Lower it until the gain reduction meter shows 3–6 dB on the loudest parts.</td></tr>
+  <tr><td>Ratio</td><td>How hard the signal above the threshold is turned down. At 4:1, a signal 4 dB over the threshold comes out only 1 dB over.</td><td>2:1 to 3:1 is gentle. Higher ratios sound heavier.</td></tr>
+  <tr><td>Attack</td><td>How fast the compressor reacts once the signal crosses the threshold. Slow lets the front of a note through (more punch). Fast catches it (smoother, but can sound dull).</td><td>10–30 ms for vocals.</td></tr>
+  <tr><td>Release</td><td>How fast the compressor lets go after the signal drops below the threshold. Too fast sounds jumpy. Too slow keeps squashing the next note.</td><td>80–150 ms for vocals.</td></tr>
+  <tr><td>Knee</td><td>How gradually compression starts around the threshold. Hard knee kicks in suddenly and is easier to hear. Soft knee eases in and sounds more natural.</td><td>Soft knee for vocals and speaking.</td></tr>
+  <tr><td>Gain (makeup)</td><td>Raises the level after compression to make up for what was turned down.</td><td>Match the level with the compressor on and off, so louder doesn't fool you into thinking it sounds better.</td></tr>
+  <tr><td>Gain reduction (GR) meter</td><td>Shows how many dB the compressor is turning down at any moment.</td><td>3–6 dB on peaks is gentle. If it is always deep, raise the threshold.</td></tr>
+  </tbody></table></div>
+  <ul class="tips" style="margin-top:6px">
+    <li><b>Set gain and HPF first,</b> then the compressor.</li>
+    <li><b>Start gentle:</b> ratio 2:1–3:1, attack 10–30 ms, release 80–150 ms.</li>
+    <li><b>Compare with it bypassed</b> at the same loudness. If it isn't better, turn it off.</li>
+    <li><b>Watch for feedback.</b> Compression also brings up quiet sounds, so open mics can ring sooner.</li>
   </ul>
 </div>
 <footer><span>When in doubt, ask the lead engineer before changing the main mix.</span><span>Update: Oct 2026</span></footer>
