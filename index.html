@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FOH Cheat Sheet: Yamaha CL5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+@page{size:letter;margin:.2in}
+:root{
+  --bg:#e9edf0;--panel:#fff;--ink:#18212b;--muted:#566370;--line:#cfd6dc;--tint:#eaf0f5;
+  --go:#1e9e57;--warn:#e5a10f;--clip:#d3342f;--accent:#1b4f72;--hd:#18212b;--hdt:#fff;
+  --head:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1419;--panel:#18212a;--ink:#e8edf2;--muted:#9aa7b4;--line:#2c3947;--tint:#202c37;--accent:#7db7e0;--hd:#0b1015}}
+:root[data-theme="dark"]{--bg:#0e1419;--panel:#18212a;--ink:#e8edf2;--muted:#9aa7b4;--line:#2c3947;--tint:#202c37;--accent:#7db7e0;--hd:#0b1015}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 14px/1.4 var(--body)}
+.sheet{max-width:8.5in;margin:0 auto;background:var(--panel)}
+header{background:var(--hd);color:var(--hdt);padding:14px 16px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+h1{font:700 34px/1 var(--head);margin:0;color:#fff}
+header p{margin:0;font-size:13px;color:#c5ced6}
+h2{font:700 19px/1 var(--head);margin:0 0 6px;color:var(--accent);border-bottom:2px solid var(--ink);padding-bottom:3px}
+.pad{padding:10px 16px}
+.top{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+ol{margin:0;padding:0;list-style:none;counter-reset:s}
+ol li{counter-increment:s;position:relative;padding:2px 0 2px 24px;margin:0 0 3px}
+ol li::before{content:counter(s);position:absolute;left:0;top:2px;width:17px;height:17px;border-radius:50%;background:var(--ink);color:var(--panel);font:700 12px/17px var(--head);text-align:center}
+.bar{position:relative;height:18px;border-radius:2px;background:linear-gradient(90deg,#2a7d52 0 60%,var(--go) 60% 72%,var(--warn) 72% 92%,var(--clip) 92% 100%);margin-top:4px}
+.aim{position:absolute;top:0;bottom:0;left:60%;width:32%;border:0 solid var(--ink);border-left-width:3px;border-right-width:3px}
+.tk{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin:2px 0 6px}
+.lg{margin:2px 0 8px}
+.lg div{display:flex;align-items:center;gap:8px;margin:0 0 4px;font-size:14px}
+.lg b{width:30px;flex:none;font-weight:600}
+.lg .ln{flex:0 0 28px;height:1px;background:var(--ink)}
+.led{flex:none;width:30px;height:15px;border-radius:8px;border:2px solid;display:inline-block}
+.led.over{background:#e8420f;border-color:#a82a05}
+.led.o{background:#f5995e;border-color:#c76a2c}
+.led.g{background:#86c752;border-color:#5a9a2e}
+.sp{min-width:640px}
+.sp .rw{display:flex;align-items:stretch;margin:0 0 3px}
+.sp .nm{flex:0 0 92px;background:var(--hd);color:#fff;font:700 11px/1 var(--head);padding:7px 6px;display:flex;align-items:center}
+.sp .tr{flex:1;position:relative;background:linear-gradient(90deg,hsla(5,70%,58%,.30) 0.0% 9.091%,hsla(20,70%,58%,.30) 9.091% 18.182%,hsla(38,70%,58%,.30) 18.182% 27.273%,hsla(52,70%,58%,.30) 27.273% 36.364%,hsla(85,70%,58%,.30) 36.364% 45.455%,hsla(165,70%,58%,.30) 45.455% 54.545%,hsla(190,70%,58%,.30) 54.545% 63.636%,hsla(205,70%,58%,.30) 63.636% 72.727%,hsla(218,70%,58%,.30) 72.727% 81.818%,hsla(250,70%,58%,.30) 81.818% 90.909%,hsla(300,70%,58%,.30) 90.909% 100.0%);min-height:28px}
+.sp .tr::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--ink);opacity:.45}
+.sp .tr span{position:absolute;top:50%;transform:translateY(-50%);background:var(--panel);color:var(--ink);border:1px solid var(--line);font:600 9px/1.2 var(--body);text-align:center;padding:2px 0;overflow:hidden;white-space:nowrap}
+.sp .ax{display:flex;font:600 9.5px var(--body);color:var(--muted);margin-bottom:2px}
+.sp .ax .l{flex:0 0 92px}
+.sp .ax .t{flex:1;position:relative;height:14px}
+.sp .ax .t span{position:absolute;top:0}
+.zb{display:flex;gap:3px;margin:2px 0 8px}
+.zb .z{padding:6px 8px;font-size:12.5px;line-height:1.25;border-bottom:4px solid;background:var(--tint)}
+.zb .z b{display:block;font:700 18px/1 var(--head)}
+.zb .lo{border-color:#5a9a2e}.zb .ok{border-color:#1e9e57;background:hsla(140,60%,45%,.28)}.zb .hi{border-color:#e5a10f}.zb .xx{border-color:#d3342f}
+.chartnote{margin:0 0 6px;font-size:12px;color:var(--muted)}
+.rule{border-left:4px solid var(--warn);background:var(--tint);padding:3px 8px;margin:0 0 4px;font-size:13px}
+.rule.r{border-color:var(--clip)}.rule.g{border-color:var(--go)}
+.zones{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.zones div{background:var(--tint);padding:4px 6px;font-size:12px;line-height:1.25}
+.zones b{display:block;font:700 15px var(--head);color:var(--accent)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:600px}
+th,td{text-align:left;vertical-align:top;padding:3px 6px;border-bottom:1px solid var(--line)}
+th{background:var(--hd);color:#fff;font:700 14px var(--head)}
+td:first-child{font-weight:600;white-space:nowrap}
+td:nth-child(2){font-weight:600;white-space:nowrap}
+.tips{columns:2;column-gap:20px;margin:0;padding-left:16px;font-size:13px}
+.tips li{margin:0 0 3px;break-inside:avoid}
+footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media (max-width:640px){.top{grid-template-columns:1fr}.zones{grid-template-columns:repeat(2,1fr)}.tips{columns:1}}
+@media print{
+  :root{--bg:#fff;--panel:#fff;--ink:#000;--muted:#333;--line:#aaa;--tint:#ececec;--hd:#18212b;--accent:#1b4f72}
+  html,body{background:#fff}
+  body{font-size:8.6pt;line-height:1.25}
+  .sheet{max-width:none}
+  header{padding:7px 10px}h1{font-size:23pt}header p{font-size:8pt}
+  .pad{padding:5px 10px}
+  h2{font-size:12pt;margin-bottom:3px}
+  .top{grid-template-columns:1.25fr 1fr;gap:12px}
+  .zones{grid-template-columns:repeat(7,1fr)}.zones div{font-size:7.4pt;padding:2px 4px}.zones b{font-size:9.5pt}
+  .scroll{overflow:visible}table{font-size:7.9pt;min-width:0}th{font-size:9pt}th,td{padding:1.5px 4px}
+  .lg div{font-size:8pt;margin-bottom:1.5px;gap:5px}.led{width:22px;height:10px;border-width:1.5px}.lg b{width:22px}.lg .ln{flex-basis:18px}.lg{margin-bottom:4px}
+  .tips{columns:2;font-size:8pt}.rule{font-size:8pt;padding:2px 6px}
+  ol li{padding-left:19px}ol li::before{width:14px;height:14px;line-height:14px;font-size:9pt}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .chart{break-before:page;padding-top:12px}
+  .chart h2{font-size:14pt}
+  .chartnote{font-size:8pt}
+  .zb .z{font-size:8.5pt;padding:4px 6px}.zb .z b{font-size:13pt}
+  .spl{padding-top:10px}
+  .sp{min-width:0}
+  .sp .nm{flex-basis:1in;font-size:9pt;padding:9px 6px}
+  .sp .tr{min-height:.36in}.sp .tr span{font-size:6.6pt;padding:3px 0}
+  .sp .ax{font-size:6.5pt}.sp .ax .l{flex-basis:1in}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header>
+  <h1>Audio Cheat Sheet: Yamaha CL5</h1>
+  <p>Sound check, gain, HPF and EQ. Starting points, not presets. Trust your ears.</p>
+</header>
+
+<div class="pad top">
+  <section>
+    <h2>Sound check</h2>
+    <ol>
+      <li><b>Start muted.</b> Unmute only the channel you are checking, +48V only for condensers. Have fader all the way down to -∞.</li>
+      <li><b>[SEL] the channel</b> and have the player play at full performance level.</li>
+      <li><b>Set GAIN</b> so the -18 dB LED lights on peaks, -12 dB rarely. Average signal at -20 dB.</li>
+      <li><b>Phase [Ø]</b> only if two mics on one source sound thin (kick, snare). See if turing <i>invert phase</i> on makes it sound muddy.</li>
+      <li><b>HPF on</b> in Selected Channel view. Start with the table value below.</li>
+      <li><b>EQ</b> in small moves. Mainly remove/cut bad sounding frequencies.</li>
+      <li><b>Fader up,</b> and balance against the full band. Listen to each souce in context with other audio sources. (Vocals loud and center)</li>
+      <li><b>Check overall volume,</b> keep all faders around Unity (0 dB) for the most fader percision. Adjust the master output for volume of the overall room volume.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Gain and house rules</h2>
+    <div class="lg" role="list" aria-label="Meter LED legend: how often each LED should light">
+      <div role="listitem"><i class="led over"></i><b>OVER</b><span class="ln"></span><span>NEVER EVER!</span></div>
+      <div role="listitem"><i class="led o"></i><b>-6</b><span class="ln"></span><span>Never</span></div>
+      <div role="listitem"><i class="led o"></i><b>-12</b><span class="ln"></span><span>Rarely</span></div>
+      <div role="listitem"><i class="led o"></i><b>-18</b><span class="ln"></span><span>Occasionally</span></div>
+      <div role="listitem"><i class="led g"></i><b>-30</b><span class="ln"></span><span>Always (or almost always)</span></div>
+      <div role="listitem"><i class="led g"></i><b>-60</b><span class="ln"></span><span>Always (when there's signal)</span></div>
+    </div>
+    <div class="rule g"><b>Channel meter LEDs:</b> -18 lights occasionally on peaks, -12 rarely, -6 never. OVER never.</div>
+    <div class="rule r"><b>Set gain once.</b> Use the fader during the service, not gain.</div>
+    <div class="rule"><b>Keyboards and electric guitar:</b> set their own volume to about 80%, leaving room to turn up.</div>
+    <div class="rule"><b>[CUE]</b> lets you listen in headphones without sending to the house.</div>
+  </section>
+</div>
+
+<div class="pad">
+  <h2>What each range does</h2>
+  <div class="zones">
+    <div><b>20–100 Hz</b>Rumble, sub weight</div>
+    <div><b>100–300 Hz</b>Body, warmth, boom</div>
+    <div><b>300–800 Hz</b>Mud, boxiness</div>
+    <div><b>0.8–2 kHz</b>Honk, nasal tone</div>
+    <div><b>2–5 kHz</b>Presence, attack, harsh</div>
+    <div><b>5–8 kHz</b>Sibilance, bite</div>
+    <div><b>8–16 kHz</b>Air, shimmer</div>
+  </div>
+</div>
+
+<div class="pad">
+  <h2>HPF and EQ by input</h2>
+  <div class="scroll"><table>
+  <thead><tr><th>Input</th><th>HPF</th><th>Body / weight</th><th>Clean up if needed</th><th>Clarity / detail</th></tr></thead>
+  <tbody>
+  <tr><td>Kick</td><td>35 Hz</td><td>50–80 Hz thump</td><td>200–400 Hz boxy</td><td>2–5 kHz beater click</td></tr>
+  <tr><td>Snare</td><td>90 Hz</td><td>100–200 Hz fatness</td><td>400–600 Hz boxy</td><td>4–6 kHz crack, 8–10 kHz snap</td></tr>
+  <tr><td>Hi-hat</td><td>300 Hz</td><td>Use HPF to reduce bleed</td><td>3–5 kHz clank</td><td>8–12 kHz shimmer</td></tr>
+  <tr><td>Toms</td><td>70 rack / 50 floor</td><td>80–250 Hz fullness</td><td>300–500 Hz box</td><td>3–5 kHz stick attack</td></tr>
+  <tr><td>Overheads</td><td>150 Hz</td><td>Use HPF</td><td>200–300 Hz wash, 3–5 kHz harsh</td><td>10 kHz+ air</td></tr>
+  <tr><td>Bass</td><td>30 Hz</td><td>40–80 Hz weight, 100–250 Hz warmth</td><td>250–400 Hz mud</td><td>700 Hz–1 kHz definition, 2–3 kHz clank</td></tr>
+  <tr><td>Acoustic guitar</td><td>90 Hz</td><td>100–250 Hz warmth</td><td>100–150 Hz boom, 200–300 Hz mud</td><td>2–5 kHz pick, 8–12 kHz sparkle</td></tr>
+  <tr><td>Piano</td><td>50 Hz</td><td>60–100 Hz weight</td><td>250–400 Hz mud</td><td>2–4 kHz attack, 8 kHz+ air</td></tr>
+  <tr><td>Electric guitar</td><td>90 Hz</td><td>100–200 Hz body</td><td>200–300 Hz mud, 500–800 Hz honk, 5 kHz+ fizz</td><td>2–4 kHz bite (dip to make room for vocals)</td></tr>
+  <tr><td>Vocals</td><td>100 male / 120 female</td><td>150–250 Hz warmth</td><td>200–400 Hz mud, 500 Hz–1 kHz nasal, 5–8 kHz sibilance</td><td>2–4 kHz clarity, 10 kHz+ air</td></tr>
+  <tr><td>Speaking mic</td><td>120 Hz</td><td>Use HPF</td><td>100–150 Hz boom, 200–300 Hz mud, 5–8 kHz sibilance</td><td>2–4 kHz clarity</td></tr>
+  </tbody></table></div>
+  <p style="margin:3px 0 0;font-size:11.5px;color:var(--muted)">HPF: raise it until the unwanted lows clear, then back off if the source loses body. Toggle it on and off to check.</p>
+</div>
+
+<div class="pad">
+  <h2>EQ tips</h2>
+  <ul class="tips">
+    <li><b>Cut before you boost.</b> Cut the mud instead of boosting everything else.</li>
+    <li><b>Sweep to find it.</b> Boost 6 dB with a narrow Q, find the worst spot, then turn it into a 2–4 dB cut.</li>
+    <li><b>Narrow Q to cut, wide Q to boost.</b></li>
+    <li><b>Keep moves to 1–4 dB.</b> Needing 8 dB or more means check the mic position or gain.</li>
+    <li><b>Judge in the full mix.</b> Solo sounds can mislead you.</li>
+    <li><b>Make space.</b> If two parts fight, cut a little from the less important one. Bypass the EQ to check it still helps.</li>
+  </ul>
+</div>
+<div class="pad chart">
+  <h2>Frequency map: where each part lives</h2>
+  <p class="chartnote">Columns are equal width, not to scale. When two parts crowd the same range, cut a little from the less important one.</p>
+  <div class="scroll"><div class="sp">
+    <div class="ax"><div class="l">20 Hz</div><div class="t"><span style="left:0.00%">30</span><span style="left:9.09%">50</span><span style="left:18.18%">100</span><span style="left:27.27%">200</span><span style="left:36.36%">300</span><span style="left:45.45%">500</span><span style="left:54.55%">1k</span><span style="left:63.64%">2k</span><span style="left:72.73%">3k</span><span style="left:81.82%">5k</span><span style="left:90.91%">10k</span><span style="right:0">20k</span></div></div>
+    <div class="rw"><div class="nm">Kick</div><div class="tr"><span style="left:5.98%;width:10.87%">bottom end</span><span style="left:18.9%;width:14.96%">roundness</span><span style="left:34.65%;width:17.01%">muddiness</span><span style="left:64.72%;width:4.88%">slap</span><span style="left:73.7%;width:6.93%">attack</span><span style="left:81.42%;width:5.83%">snap</span><span style="left:88.98%;width:5.67%">hiss</span></div></div>
+    <div class="rw"><div class="nm">Snare</div><div class="tr"><span style="left:17.01%;width:17.95%">fills out sound</span><span style="left:37.64%;width:6.93%">bite</span><span style="left:47.24%;width:10.39%">bark</span><span style="left:75.12%;width:8.98%">crispness</span><span style="left:85.2%;width:12.44%">adds presence</span></div></div>
+    <div class="rw"><div class="nm">Toms</div><div class="tr"><span style="left:12%;width:9%">depth</span><span style="left:22.7%;width:9.1%">fullness</span><span style="left:36.4%;width:9.1%">boxiness</span><span style="left:72.7%;width:9.1%">stick attack</span></div></div>
+    <div class="rw"><div class="nm">Overheads</div><div class="tr"><span style="left:27.5%;width:9%">wash</span><span style="left:45.7%;width:8.8%">gong</span><span style="left:72.7%;width:8.8%">harshness</span><span style="left:83.5%;width:8%">shimmer</span><span style="left:93%;width:6.5%">air</span></div></div>
+    <div class="rw"><div class="nm">Bass</div><div class="tr"><span style="left:0.94%;width:6.61%">rumble</span><span style="left:11.34%;width:9.92%">bottom</span><span style="left:39.06%;width:9.13%">growl</span><span style="left:50.08%;width:10.08%">attack</span><span style="left:65.2%;width:6.14%">pop</span><span style="left:82.83%;width:8.5%">sheen</span></div></div>
+    <div class="rw"><div class="nm">Electric guitar</div><div class="tr"><span style="left:5.35%;width:6.61%">hum</span><span style="left:28.82%;width:14.96%">fullness</span><span style="left:55.91%;width:15.28%">presence</span><span style="left:72.13%;width:4.09%">bite</span><span style="left:77.48%;width:6.77%">buzz</span><span style="left:84.72%;width:4.72%">air</span><span style="left:90.39%;width:6.46%">hiss</span></div></div>
+    <div class="rw"><div class="nm">Acoustic guitar</div><div class="tr"><span style="left:5.98%;width:9.13%">bottom</span><span style="left:16.38%;width:9.13%">boom</span><span style="left:28.5%;width:7.4%">body</span><span style="left:65.35%;width:14.17%">presence</span></div></div>
+    <div class="rw"><div class="nm">Piano</div><div class="tr"><span style="left:11.34%;width:13.07%">resonance</span><span style="left:32.6%;width:17.48%">muddiness</span><span style="left:70.87%;width:13.39%">presence</span><span style="left:88.5%;width:9.13%">overtones</span></div></div>
+    <div class="rw"><div class="nm">Female vocal</div><div class="tr"><span style="left:13.86%;width:11.18%">fundamental</span><span style="left:25.51%;width:9.13%">body</span><span style="left:76.06%;width:10.55%">presence</span><span style="left:89.29%;width:6.61%">air</span></div></div>
+    <div class="rw"><div class="nm">Male vocal</div><div class="tr"><span style="left:11.65%;width:10.55%">fundamental</span><span style="left:23.15%;width:12.28%">body</span><span style="left:71.18%;width:10.08%">presence</span><span style="left:87.4%;width:6.61%">air</span></div></div>
+  </div></div>
+</div>
+<div class="pad spl">
+  <h2>Volume target: 80–85 dB</h2>
+  <div class="zb">
+    <div class="z lo" style="flex:10"><b>Below 80</b>Too quiet</div>
+    <div class="z ok" style="flex:5"><b>80–85</b>Target</div>
+    <div class="z hi" style="flex:5"><b>85–90</b>Turn down</div>
+    <div class="z xx" style="flex:10"><b>Over 90</b>Too loud: turn down now</div>
+  </div>
+  <ul class="tips">
+    <li><b>Use an SPL meter or app</b> set to A-weighting, slow response.</li>
+    <li><b>Measure in the same spot every week,</b> during the loudest part of the service.</li>
+    <li><b>Re-check</b> at the start of each song and when the band changes (full band, solo, speaking).</li>
+    <li><b>Use the main fader</b> to bring the overall level into range. Don't change channel gain.</li>
+    <li><b>Over 85?</b> Ask players to turn down their instruments or amps first (keyboards and electric guitar at about 80%), then lower the main fader.</li>
+    <li><b>Walk-in music and videos</b> should land in the same range as the band.</li>
+  </ul>
+</div>
+<footer><span>When in doubt, ask the lead engineer before changing the main mix.</span><span>Update: Oct 2026</span></footer>
+</div>
+</body>
+</html>
