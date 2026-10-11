@@ -239,6 +239,46 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
     <li><b>Watch for feedback.</b> Compression also brings up quiet sounds, so open mics can ring sooner.</li>
   </ul>
 </div>
+<div class="pad cmp">
+  <h2>Compressor settings</h2>
+  <p class="chartnote">A compressor turns down the loud parts so the level stays even. Turn on Dynamics 1 in Selected Channel view, then use the settings below.</p>
+  <div class="scroll"><table>
+  <thead><tr><th>Setting</th><th>What it does</th><th>Tip</th></tr></thead>
+  <tbody>
+  <tr><td>Threshold</td><td>The level where compression starts. Sound below it is left alone. Lowering the threshold means more of the signal gets turned down.</td><td>Lower it until the gain reduction meter shows 3–6 dB on the loudest parts.</td></tr>
+  <tr><td>Ratio</td><td>How hard the signal above the threshold is turned down. At 4:1, a signal 4 dB over the threshold comes out only 1 dB over.</td><td>2:1 to 3:1 is gentle. Higher ratios sound heavier.</td></tr>
+  <tr><td>Attack</td><td>How fast the compressor reacts once the signal crosses the threshold. Slow lets the front of a note through (more punch). Fast catches it (smoother, but can sound dull).</td><td>10–30 ms for vocals.</td></tr>
+  <tr><td>Release</td><td>How fast the compressor lets go after the signal drops below the threshold. Too fast sounds jumpy. Too slow keeps squashing the next note.</td><td>50–150 ms for vocals.</td></tr>
+  <tr><td>Knee</td><td>How gradually compression starts around the threshold. Hard knee kicks in suddenly and is easier to hear. Soft knee eases in and sounds more natural.</td><td>Soft knee for vocals and speaking.</td></tr>
+  <tr><td>Gain (makeup)</td><td>Raises the level after compression to make up for what was turned down.</td><td>Match the level with the compressor on and off, so louder doesn't fool you into thinking it sounds better.</td></tr>
+  <tr><td>Gain reduction (GR) meter</td><td>Shows how many dB the compressor is turning down at any moment.</td><td>3–6 dB on peaks is gentle. If it is always deep, raise the threshold.</td></tr>
+  </tbody></table></div>
+  <p class="sub">Where to start by instrument</p>
+  <div class="scroll"><table class="st">
+  <thead><tr><th></th><th>Kick</th><th>Snare</th><th>Toms</th><th>Vocals</th><th>Bass</th></tr></thead>
+  <tbody>
+  <tr><td>Ratio</td><td>5:1</td><td>5:1</td><td>5:1</td><td>3:1</td><td>4:1</td></tr>
+  <tr><td>Attack</td><td>10 ms</td><td>20 ms</td><td>20 ms</td><td>10 ms</td><td>10 ms</td></tr>
+  <tr><td>Release</td><td>120 ms</td><td>200 ms</td><td>300 ms</td><td>50 ms</td><td>100 ms</td></tr>
+  <tr><td>Gain</td><td>+6 dB</td><td>+6 dB</td><td>+6 dB</td><td>+6 dB</td><td>+6 dB</td></tr>
+  <tr><td>Threshold</td><td colspan="5">Set by ear: lower it until the gain reduction meter reads about -6 dB (see below)</td></tr>
+  </tbody></table></div>
+  <p class="sub">Setting the threshold</p>
+  <ul class="tips">
+    <li><b>Drums:</b> have the drummer hit that drum solidly, over and over. Lower the threshold until the meter averages about -6 dB on each hit.</li>
+    <li><b>Vocals:</b> while the singer sings out, lower the threshold until the meter reads about -6 dB at their loudest moments.</li>
+    <li><b>Bass:</b> during a loud part of a song, set the threshold so the meter averages about -6 dB.</li>
+    <li><b>Gain of +6 dB</b> makes up for about 6 dB of reduction. If you are reducing less, lower the gain. Compare at equal loudness.</li>
+    <li><b>Electric guitar, keys and overheads</b> usually need little or no compression. Start with it off.</li>
+  </ul>
+  <ul class="tips" style="margin-top:6px">
+    <li><b>Set gain and HPF first,</b> then the compressor.</li>
+    <li><b>Start with the instrument table</b> above, then adjust by ear.</li>
+    <li><b>Compare with it bypassed</b> at the same loudness. If it isn't better, turn it off.</li>
+    <li><b>Watch for feedback.</b> Compression also brings up quiet sounds, so open mics can ring sooner.</li>
+  </ul>
+  
+</div>
 <footer><span>When in doubt, ask the lead engineer before changing the main mix.</span><span>Update: Oct 2026</span></footer>
 </div>
 </body>
