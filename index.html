@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>FOH Cheat Sheet</title>
+<title>FOH Cheat Sheet: Yamaha CL5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -58,6 +58,21 @@ ol li::before{content:counter(s);position:absolute;left:0;top:2px;width:17px;hei
 .zb .lo{border-color:#5a9a2e}.zb .ok{border-color:#1e9e57;background:hsla(140,60%,45%,.28)}.zb .hi{border-color:#e5a10f}.zb .xx{border-color:#d3342f}
 .cmp td:nth-child(2){font-weight:400;white-space:normal}
 .cmp td:nth-child(3){color:var(--muted)}
+.sub{font:700 17px/1 var(--head);color:var(--accent);margin:14px 0 5px}
+.st td,.st th{text-align:center}.st td:first-child,.st th:first-child{text-align:left}
+.cmp .st td:nth-child(2){font-weight:400}.cmp .st td:nth-child(3){color:inherit}
+.rg{margin:4px 0 8px}
+.rg .ra{display:flex;font:600 10px var(--body);color:var(--muted);margin-bottom:2px}
+.rg .l,.rg .nm{flex:0 0 150px}
+.rg .t{flex:1;position:relative;height:14px}
+.rg .t span{position:absolute;top:0}
+.rg .rr{display:flex;align-items:stretch;margin:0 0 3px}
+.rg .nm{background:var(--hd);color:#fff;padding:5px 7px;display:flex;flex-direction:column;justify-content:center;font:700 13px/1.1 var(--head)}
+.rg .nm small{font:400 10px/1.2 var(--body);color:#c5ced6;margin-top:2px}
+.rg .tr{flex:1;position:relative;min-height:36px;background:linear-gradient(90deg,var(--tint) 0 16.667%,hsla(140,55%,45%,.16) 16.667% 83.333%,hsla(5,70%,55%,.22) 83.333% 100%)}
+.rg .tr::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(16.667% - 1px),rgba(128,128,128,.45) calc(16.667% - 1px),rgba(128,128,128,.45) 16.667%)}
+.rg .b{position:absolute;top:6px;bottom:6px;display:flex;align-items:center;justify-content:center;font:700 12px var(--body);font-style:normal;color:#fff;border-radius:3px}
+.rg .b.spk{background:#1b4f72}.rg .b.mu{background:#c46f1a}.rg .b.fb{background:#a23b0f}
 .chartnote{margin:0 0 6px;font-size:12px;color:var(--muted)}
 .rule{border-left:4px solid var(--warn);background:var(--tint);padding:3px 8px;margin:0 0 4px;font-size:13px}
 .rule.r{border-color:var(--clip)}.rule.g{border-color:var(--go)}
@@ -94,7 +109,8 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
   .chartnote{font-size:8pt}
   .zb .z{font-size:8.5pt;padding:4px 6px}.zb .z b{font-size:13pt}
   .spl{padding-top:10px}
-  .cmp{padding-top:8px}.cmp .tips{font-size:7.8pt}
+  .rg .l,.rg .nm{flex-basis:1.45in}.rg .nm{font-size:10.5pt}.rg .nm small{font-size:6.8pt}.rg .tr{min-height:.34in}.rg .b{font-size:8.5pt}.rg .ra{font-size:7pt}
+  .cmp{break-before:page;padding-top:12px}.cmp .tips{font-size:8.5pt}.sub{font-size:12pt;margin-top:12px}
   .sp{min-width:0}
   .sp .nm{flex-basis:1in;font-size:9pt;padding:9px 6px}
   .sp .tr{min-height:.36in}.sp .tr span{font-size:6.6pt;padding:3px 0}
@@ -135,7 +151,7 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
     </div>
     <div class="rule g"><b>Channel meter LEDs:</b> -18 lights occasionally on peaks, -12 rarely, -6 never. OVER never.</div>
     <div class="rule r"><b>Set gain once.</b> Use the fader during the service, not gain.</div>
-    <div class="rule"><b>Keyboards and electric guitar:</b> set their own volume to about 80%, leaving room to turn up.</div>
+    <div class="rule"><b>Keyboards and electric guitar:</b> set their own volume to about 70-80%, leaving room to turn up.</div>
     <div class="rule"><b>[CUE]</b> lets you listen in headphones without sending to the house.</div>
   </section>
 </div>
@@ -202,41 +218,20 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
   </div></div>
 </div>
 <div class="pad spl">
-  <h2>Volume target: 75–85 dB</h2>
-  <div class="zb">
-    <div class="z lo" style="flex:10"><b>Below 75</b>Too quiet</div>
-    <div class="z ok" style="flex:5"><b>75–85</b>Target</div>
-    <div class="z hi" style="flex:5"><b>85–90</b>Turn down</div>
-    <div class="z xx" style="flex:10"><b>Over 90</b>Too loud: turn down now</div>
+  <h2>Volume targets by part of service</h2>
+  <p class="chartnote">Speaking 65–75 dB, music about 75–85 dB. Measure with an SPL meter or app set to A-weighting, slow response, in the same spot every week. Over 85 dB is too loud.</p>
+  <div class="rg">
+    <div class="ra"><div class="l"></div><div class="t"><span style="left:0.0%">60</span><span style="left:16.67%">65</span><span style="left:33.33%">70</span><span style="left:50.0%">75</span><span style="left:66.67%">80</span><span style="left:83.33%">85</span><span style="right:0">90 dB</span></div></div>
+    <div class="rr"><div class="nm">Speaking<small>Sermon, announcements, prayer, scripture, videos with speech</small></div><div class="tr"><i class="b spk" style="left:16.67%;width:33.33%">65–75 dB</i></div></div>
+    <div class="rr"><div class="nm">Quiet music<small>Walk-in music, intros, softer songs</small></div><div class="tr"><i class="b mu" style="left:50.0%;width:16.67%">75–80 dB</i></div></div>
+    <div class="rr"><div class="nm">Full-band worship<small>Songs with the whole band</small></div><div class="tr"><i class="b fb" style="left:66.67%;width:16.66%">80–85 dB</i></div></div>
   </div>
   <ul class="tips">
-    <li><b>Use an SPL meter or app</b> set to A-weighting, slow response.</li>
-    <li><b>Measure in the same spot every week,</b> during the loudest part of the service.</li>
+    <li><b>Music to speaking:</b> bring the main fader down so speaking lands in 65–75, then back up for the next song.</li>
     <li><b>Re-check</b> at the start of each song and when the band changes (full band, solo, speaking).</li>
     <li><b>Use the main fader</b> to bring the overall level into range. Don't change channel gain.</li>
-    <li><b>Over 85?</b> Ask players to turn down their instruments or amps first (keyboards and electric guitar at about 80%), then lower the main fader.</li>
-    <li><b>Walk-in music and videos</b> should land in the same range as the band.</li>
-  </ul>
-</div>
-<div class="pad cmp">
-  <h2>Compressor settings</h2>
-  <p class="chartnote">A compressor turns down the loud parts so the level stays even. Turn on Dynamics 1 in Selected Channel view, then use the settings below.</p>
-  <div class="scroll"><table>
-  <thead><tr><th>Setting</th><th>What it does</th><th>Tip</th></tr></thead>
-  <tbody>
-  <tr><td>Threshold</td><td>The level where compression starts. Sound below it is left alone. Lowering the threshold means more of the signal gets turned down.</td><td>Lower it until the gain reduction meter shows 3–6 dB on the loudest parts.</td></tr>
-  <tr><td>Ratio</td><td>How hard the signal above the threshold is turned down. At 4:1, a signal 4 dB over the threshold comes out only 1 dB over.</td><td>2:1 to 3:1 is gentle. Higher ratios sound heavier.</td></tr>
-  <tr><td>Attack</td><td>How fast the compressor reacts once the signal crosses the threshold. Slow lets the front of a note through (more punch). Fast catches it (smoother, but can sound dull).</td><td>10–30 ms for vocals.</td></tr>
-  <tr><td>Release</td><td>How fast the compressor lets go after the signal drops below the threshold. Too fast sounds jumpy. Too slow keeps squashing the next note.</td><td>80–150 ms for vocals.</td></tr>
-  <tr><td>Knee</td><td>How gradually compression starts around the threshold. Hard knee kicks in suddenly and is easier to hear. Soft knee eases in and sounds more natural.</td><td>Soft knee for vocals and speaking.</td></tr>
-  <tr><td>Gain (makeup)</td><td>Raises the level after compression to make up for what was turned down.</td><td>Match the level with the compressor on and off, so louder doesn't fool you into thinking it sounds better.</td></tr>
-  <tr><td>Gain reduction (GR) meter</td><td>Shows how many dB the compressor is turning down at any moment.</td><td>3–6 dB on peaks is gentle. If it is always deep, raise the threshold.</td></tr>
-  </tbody></table></div>
-  <ul class="tips" style="margin-top:6px">
-    <li><b>Set gain and HPF first,</b> then the compressor.</li>
-    <li><b>Start gentle:</b> ratio 2:1–3:1, attack 10–30 ms, release 80–150 ms.</li>
-    <li><b>Compare with it bypassed</b> at the same loudness. If it isn't better, turn it off.</li>
-    <li><b>Watch for feedback.</b> Compression also brings up quiet sounds, so open mics can ring sooner.</li>
+    <li><b>Over 85?</b> Ask players to turn down their instruments or amps first (keyboards and electric guitar at about 70-80%), then lower the main fader.</li>
+    <li><b>Videos and playback</b> follow the part of the service they belong to: speech 65–75, music 75–85.</li>
   </ul>
 </div>
 <div class="pad cmp">
@@ -277,7 +272,6 @@ footer{padding:6px 16px 10px;font-size:11.5px;color:var(--muted);display:flex;ju
     <li><b>Compare with it bypassed</b> at the same loudness. If it isn't better, turn it off.</li>
     <li><b>Watch for feedback.</b> Compression also brings up quiet sounds, so open mics can ring sooner.</li>
   </ul>
-  
 </div>
 <footer><span>When in doubt, ask the lead engineer before changing the main mix.</span><span>Update: Oct 2026</span></footer>
 </div>
